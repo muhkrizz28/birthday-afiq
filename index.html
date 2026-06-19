@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Afiq ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#0f3460,#16213e);
+    color:white;
+    text-align:center;
+    min-height:100vh;
+    overflow-y:auto;
+}
+
+.container{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+    position:relative;
+    z-index:10;
+}
+
+h1{
+    font-size:clamp(36px, 8vw, 60px);
+    margin-bottom:20px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px pink;
+    }
+}
+
+.cake{
+    font-size:120px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.message{
+    width:90%;
+    margin:20px auto;
+    font-size:22px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ffb6c1;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+#secret{
+    display:none;
+    margin-top:30px;
+    font-size:26px;
+    color:#ffd6e7;
+}
+
+.special-message{
+    margin-top:80px;
+    padding-bottom:100px;
+}
+
+.special-message h2{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.special-message p{
+    width:90%;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+}
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    color:red;
+    animation:float 6s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+.footer{
+    margin-top:40px;
+    font-size:18px;
+    color:#d9d9d9;
+}
+
+@media (max-width:768px){
+
+    .message,
+    .special-message p{
+        font-size:18px;
+    }
+
+    button{
+        width:100%;
+        max-width:300px;
+    }
+
+    #secret{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 Happy Birthday Afiq 🎉</h1>
+
+<div class="cake">🎂</div>
+
+<p class="message">
+Happy Birthday, Afiq 🤍<br><br>
+
+I hope today brings you happiness, laughter, and beautiful memories.
+
+Thank you for being someone special in my life.
+
+No matter what happens, I will always wish the best for you.
+
+Enjoy your day and keep smiling. ❤️
+</p>
+
+<button onclick="birthdaySurprise()">
+🎂 Click Here Afiq 🎂
+</button>
+
+<p id="secret">
+Happy Birthday to the person who will always have a special place in my heart. ❤️
+</p>
+
+<div class="special-message">
+    <h2>💌 A Special Message</h2>
+
+    <p>
+        Thank you for all the memories and moments we shared.
+        I hope this birthday brings you happiness, success,
+        good health, and everything you wish for.
+
+        No matter where life takes us, I will always be grateful
+        that I met you.
+
+        Happy Birthday once again, Afiq. ❤️
+    </p>
+</div>
+
+<div class="footer">
+Made with ❤️ for Afiq
+</div>
+
+<audio id="music">
+    <source src="happybirthday.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+function birthdaySurprise(){
+
+    const music = document.getElementById("music");
+
+    music.play();
+
+    document.getElementById("secret").style.display = "block";
+
+    for(let i = 0; i < 20; i++){
+        createHeart();
+    }
+}
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 800);
+
+</script>
+
+</body>
+</html>
